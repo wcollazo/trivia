@@ -5,7 +5,7 @@ import "../css/AnswerButtons.css";
 
 class AnswerButtons extends Component {
   render() {
-    return <div className="answer">{this.props.answerChoice}</div>;
+    return <div className="answer">{this.props.Answers}</div>;
   }
 }
 

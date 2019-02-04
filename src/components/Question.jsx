@@ -11,14 +11,14 @@ class Question extends Component {
     return (
       <div>
         <p />
-        <QuestionText text="Question goes here" />
+        <QuestionText questionText={this.props.questionText} />
         <p />
         <ResetButton />
         <p />
-        <AnswerButtons className="Answers" answerChoice="1" />
-        <AnswerButtons className="Answers" answerChoice="2" />
-        <AnswerButtons className="Answers" answerChoice="3" />
-        <AnswerButtons className="Answers" answerChoice="4" />
+        <AnswerButtons className="Answers" Answers={this.props.Answers[0]} />
+        <AnswerButtons className="Answers" Answers={this.props.Answers[1]} />
+        <AnswerButtons className="Answers" Answers={this.props.Answers[2]} />
+        <AnswerButtons className="Answers" Answers={this.props.Answers[3]} />
       </div>
     );
   }
