@@ -1,9 +1,8 @@
-import firebase from "firebase";
+import firebase from 'firebase';
 
 export function buildFirebase() {
-  var app;
   if (firebase.apps.length === 0) {
-    app = firebase.initializeApp({
+    const app = firebase.initializeApp({
       apiKey: "AIzaSyADAYC7lX5QVEspv8BUeV2uDqrFle8yQpk",
       authDomain: "studio-trivia-db.firebaseapp.com",
       databaseURL: "https://studio-trivia-db.firebaseio.com",
@@ -11,10 +10,10 @@ export function buildFirebase() {
       storageBucket: "studio-trivia-db.appspot.com",
       messagingSenderId: "736024037811"
     });
+    return firebase.database(app);
   } else {
-    app = firebase.app[0];
+    return firebase.apps[0].database();
   }
-  return firebase.database(app);
 }
 
 export function getRandomQuestion(questions) {
