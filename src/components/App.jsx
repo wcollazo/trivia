@@ -11,8 +11,18 @@ class App extends Component {
     super(props);
     this.state = {
       questionText: "rerorerorerorero",
-      Answers: ["a", "b", "c", "dio"]
+      Answers: ["a", "b", "c", "dio"],
+      CorrectAnswer: 3
     };
+  }
+  CheckAnswer(answer) {
+    var answerIndex = this.state.Answers.indexOf(answer);
+    if (this.state.CorrectAnswer === answerIndex) {
+      alert("Anti-Left");
+    } else {
+      alert("Anti-Anti-Anti-Anti-Anti-Anti-Anti-Anti-Anti-Anti-Left");
+    }
+    this.setState({ SelectedAnswer: answerIndex });
   }
 
   render() {
@@ -22,6 +32,9 @@ class App extends Component {
         <Question
           questionText={this.state.questionText}
           Answers={this.state.Answers}
+          CheckAnswer={answer => this.CheckAnswer(answer)}
+          SelectedAnswer={this.state.SelectedAnswer}
+          CorrectAnswer={this.state.CorrectAnswer}
         />
       </div>
     );

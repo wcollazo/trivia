@@ -15,10 +15,38 @@ class Question extends Component {
         <p />
         <ResetButton />
         <p />
-        <AnswerButtons className="Answers" Answers={this.props.Answers[0]} />
-        <AnswerButtons className="Answers" Answers={this.props.Answers[1]} />
-        <AnswerButtons className="Answers" Answers={this.props.Answers[2]} />
-        <AnswerButtons className="Answers" Answers={this.props.Answers[3]} />
+        <AnswerButtons
+          CheckAnswer={this.props.CheckAnswer}
+          className="Answers"
+          AnswerID={0}
+          Answers={this.props.Answers[0]}
+          SelectedAnswer={this.props.SelectedAnswer}
+          CorrectAnswer={this.props.CorrectAnswer}
+        />
+        <AnswerButtons
+          CheckAnswer={this.props.CheckAnswer}
+          className="Answers"
+          AnswerID={1}
+          Answers={this.props.Answers[1]}
+          SelectedAnswer={this.props.SelectedAnswer}
+          CorrectAnswer={this.props.CorrectAnswer}
+        />
+        <AnswerButtons
+          CheckAnswer={this.props.CheckAnswer}
+          className="Answers"
+          AnswerID={2}
+          Answers={this.props.Answers[2]}
+          SelectedAnswer={this.props.SelectedAnswer}
+          CorrectAnswer={this.props.CorrectAnswer}
+        />
+        <AnswerButtons
+          CheckAnswer={this.props.CheckAnswer}
+          className="Answers"
+          AnswerID={3}
+          Answers={this.props.Answers[3]}
+          SelectedAnswer={this.props.SelectedAnswer}
+          CorrectAnswer={this.props.CorrectAnswer}
+        />
       </div>
     );
   }
