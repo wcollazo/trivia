@@ -11,8 +11,34 @@ class App extends Component {
     super(props);
     this.state = {
       questionText: "rerorerorerorero",
-      Answers: ["a", "b", "c", "dio"]
+      questionText2: "licklicklicklick",
+      Answers: ["a", "b", "c", "dio"],
+      Answers2: ["e", "f", "g", "Hell 2 U!"],
+      CorrectAnswer: 3,
+      value: true,
+      words: "",
+      clicked: false
     };
+  }
+  CheckAnswer(answer) {
+    var answerIndex = this.state.Answers.indexOf(answer);
+    if (this.state.CorrectAnswer === answerIndex) {
+      this.setState({ value: true });
+    } else {
+      this.setState({ value: false });
+    }
+    this.setState({ SelectedAnswer: answerIndex });
+  }
+
+  onResetButtonClicked(click) {
+    // Add things here!
+    if (clicked === false) {
+      this.setState({ clicked: true });
+      this.setState({ Answers: Answers2 });
+    } else if (clicked === true) {
+      this.setState({ clicked: false });
+      this.setState({ Answers: Answers });
+    }
   }
 
   render() {
@@ -22,6 +48,12 @@ class App extends Component {
         <Question
           questionText={this.state.questionText}
           Answers={this.state.Answers}
+          CheckAnswer={answer => this.CheckAnswer(answer)}
+          SelectedAnswer={this.state.SelectedAnswer}
+          CorrectAnswer={this.state.CorrectAnswer}
+          value={this.state.value}
+          words={this.state.words}
+          onResetButtonClicked={click => this.onResetButtonClicked(click)}
         />
       </div>
     );
