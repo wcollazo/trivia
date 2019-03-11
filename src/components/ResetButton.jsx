@@ -4,7 +4,11 @@ import "../js/ResetButton.js";
 
 class ResetButton extends Component {
   render() {
-    return <button id="ThirdBomb">Bite Za Dusto</button>;
+    return (
+      <button id="ThirdBomb" onResetButtonClicked={onResetButtonClicked(click)}>
+        Bite Za Dusto
+      </button>
+    );
   }
 }
 
